@@ -18,3 +18,5 @@ $ mysql -u root -p (for creating the initial database)
 python manage.py createsuperuser (for access to admin panel)
 
 python manage.py runserver
+
+new
