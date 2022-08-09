@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+
+{% block content %}
+{% load static %}
+
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" href="{% static 'persik/css/styles.css' %}" rel="stylesheet" />
+
+
+</head>
+<body>
+    <div class="center">
+        <form action="{% url 'location' %}" method="post">
+            {% csrf_token %}
+            <label for="ip">Please enter your IP: </label>
+            <input id="ip" type="text" name="ip" value="{{ ip_address }}">
+            <button type="submit">Submit</button>
+        </form>
+
+
+        <p>{{ form.non_field_errors }}</p>
+
+        <p><a href="{% url 'base' %}" style="--clr:#FFFAFA"><span> Back to Main Page </span><i></i></a></p>
+
+    </div>
+
+
+
+
+
+</body>
+</html>
+{% endblock %}

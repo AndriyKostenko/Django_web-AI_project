@@ -1,0 +1,37 @@
+
+{% load static %}
+
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" href="{% static 'persik/css/styles.css' %}" rel="stylesheet" />
+
+</head>
+<body>
+
+{% for video in video_list %}
+    <div class="center">
+        <p><h4>{{ video.title }}</h4>
+        <p><span>{{ video.create_at }}</span></p>
+        <video
+                  id="my-video"
+                  class="video-js"
+                  controls
+                  preload="auto"
+                  width="400"
+                  height="200"
+                  data-setup="{}"
+        >
+        <source src="{% url 'stream' video.id %}" type="video/mp4"/>
+        <source src="{% url 'stream' video.id %}" type="video/webm"/>
+        </video>
+
+        <p>{{ video.description|slice:":20" }}</p>
+    {%endfor%}
+        <br>
+        <p><a href="{% url 'base' %}" style="--clr:#FFFAFA"><span> Back to Main Page </span><i></i></a></p>
+    </div>
+</body>
+</html>

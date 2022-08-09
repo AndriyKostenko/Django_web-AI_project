@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+
+{% block content %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link type="text/css" href="{% static 'persik/css/styles.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <div class="center">
+        <p><h2> The accuracy is about 75 % of the Cat detection 😊. </h2>
+        <form method="POST" action="" enctype='multipart/form-data'>
+            {% csrf_token %}
+            {{ form }}
+            <p><button type="submit">Submit</button></p>
+        </form>
+        <img src="{{ photo.file.url }}" alt="" width="300" height="300">
+        <p>
+            <p>
+                {% if error %}
+                    {{ error }}
+                {% endif %}
+            </p>
+            {% for res in result %}
+            {% if res %}
+                {{ res }}
+            {% endif %}
+            {% endfor %}
+        </p>
+        <p><a href="{% url 'base' %}" style="--clr:#FFFAFA"><span> Back to Main Page </span><i></i></a></p>
+    </div>
+</body>
+</html>
+{% endblock %}

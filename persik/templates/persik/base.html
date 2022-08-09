@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>{{ title }}</title>
+
+    <link type="text/css" href="{% static 'persik/css/styles.css' %}" rel="stylesheet" />
+
+    <!-- Connecting google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Send+Flowers&display=swap" rel="stylesheet">
+
+    <!-- Connecting video player libriary js -->
+    <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
+    <script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
+
+</head>
+<body>
+    <div class="center">
+
+        <h1>Hello, that's Catty Perry blog =)</h1>
+        <p><h1>I'm a serious, young and powerful cat.</h1>
+        <p><h1>You can do a lot of things with me.</h1>
+
+        <img src="static/persik/images/photo_1.png" style="width:300px;height:300px;">
+        <p><a href="{% url 'play' %}" style="--clr:#FFFAFA"><span> Play with cat </span><i></i></a></p>
+        <img src="static/persik/images/photo_2.png" style="width:300px;height:300px;">
+        <p><a href="{% url 'watch' %}" style="--clr:#FFFAFA"><span> Watch the Cat's Movies </span><i></i></a></p>
+        <img src="static/persik/images/photo_3.png" style="width:300px;height:300px;">
+        <p><a href="{% url 'recognize' %}" style="--clr:#FFFAFA"><span> Recognize the Cat </span><i></i></a></p>
+        <img src="static/persik/images/photo_4.png" style="width:300px;height:300px;">
+        <p><a href="{% url 'weather' %}" style="--clr:#FFFAFA"><span> Check the weather with Cat</span><i></i></a></p>
+        <img src="static/persik/images/photo_5.png" style="width:300px;height:300px;">
+        <p><a href="{% url 'location' %}" style="--clr:#FFFAFA"><span> Check location with Cat</span><i></i></a></p>
+    </div>
+
+{% block content %}
+{% endblock %}
+
+
+</body>
+</html>
