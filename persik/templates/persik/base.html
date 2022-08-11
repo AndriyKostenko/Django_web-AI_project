@@ -18,26 +18,76 @@
     <!-- Connecting video player libriary js -->
     <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
     <script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
+    <script src="{% static 'persik/js/game.js' %}"></script>
+
+    <!-- Adding animated header -->
+    <script src="{% static 'persik/js/finisher-header.es5.min.js' %}"></script>
+
+
+
+
 
 </head>
 <body>
     <div class="center">
-
-        <h1>Hello, that's Catty Perry blog =)</h1>
-        <p><h1>I'm a serious, young and powerful cat.</h1>
-        <p><h1>You can do a lot of things with me.</h1>
-
-        <img src="static/persik/images/photo_1.png" style="width:300px;height:300px;">
-        <p><a href="{% url 'play' %}" style="--clr:#FFFAFA"><span> Play with cat </span><i></i></a></p>
-        <img src="static/persik/images/photo_2.png" style="width:300px;height:300px;">
-        <p><a href="{% url 'watch' %}" style="--clr:#FFFAFA"><span> Watch the Cat's Movies </span><i></i></a></p>
-        <img src="static/persik/images/photo_3.png" style="width:300px;height:300px;">
-        <p><a href="{% url 'recognize' %}" style="--clr:#FFFAFA"><span> Recognize the Cat </span><i></i></a></p>
-        <img src="static/persik/images/photo_4.png" style="width:300px;height:300px;">
-        <p><a href="{% url 'weather' %}" style="--clr:#FFFAFA"><span> Check the weather with Cat</span><i></i></a></p>
-        <img src="static/persik/images/photo_5.png" style="width:300px;height:300px;">
-        <p><a href="{% url 'location' %}" style="--clr:#FFFAFA"><span> Check location with Cat</span><i></i></a></p>
+        <div class="header finisher-header" style="width: 100%; height: 300px;">
+            <h1>Hello, that's my Cat's blog =)</h1>
+            <p><h1>He is serious, young and powerful cat.</h1>
+            <p><h1>You can do a lot of things with him.</h1>
+        </div>
+        <script type="text/javascript">
+            new FinisherHeader({
+              "count": 35,
+              "size": {
+                "min": 5,
+                "max": 120,
+                "pulse": 0.1
+              },
+              "speed": {
+                "x": {
+                  "min": 0,
+                  "max": 0.2
+                },
+                "y": {
+                  "min": 0,
+                  "max": 0.4
+                }
+              },
+              "colors": {
+                "background": "#eff0e9",
+                "particles": [
+                  "#ffe960",
+                  "#87ddfe",
+                  "#8481ff",
+                  "#fc7bfc",
+                  "#e2ffa5"
+                ]
+              },
+              "blending": "none",
+              "opacity": {
+                "center": 0.5,
+                "edge": 0.7
+              },
+              "skew": -2.4,
+              "shapes": [
+                "c"
+              ]
+            });
+            </script>
     </div>
+    <div class="" id="menu_section">
+        <div class="hover15 column">
+            <ul id="menu">
+                <li data-menuanchor="firstPage"><figure><img src="static/persik/images/photo_1.png" style="width:300px;height:300px;"></figure><a href="{% url 'play' %}" style="--clr:#FFFAFA"><span> Play with cat </span><i></i></a></li>
+                <li data-menuanchor="secondPage"><figure><img src="static/persik/images/photo_2.png" style="width:300px;height:300px;"></figure><a href="{% url 'watch' %}" style="--clr:#FFFAFA"><span> Watch the Cat's Movies </span><i></i></a></li>
+                <li data-menuanchor="thirdPage"><figure><img src="static/persik/images/photo_3.png" style="width:300px;height:300px;"></figure><a href="{% url 'recognize' %}" style="--clr:#FFFAFA"><span> Recognize the Cat </span><i></i></a></li>
+                <li data-menuanchor="fourthPage"><figure><img src="static/persik/images/photo_4.png" style="width:300px;height:300px;"></figure><a href="{% url 'weather' %}" style="--clr:#FFFAFA"><span> Check the weather with Cat</span><i></i></a></li>
+                <li data-menuanchor="fifthPage"><figure><img src="static/persik/images/photo_5.png" style="width:300px;height:300px;"></figure><a href="{% url 'location' %}" style="--clr:#FFFAFA"><span> Check location with Cat</span><i></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+
 
 {% block content %}
 {% endblock %}

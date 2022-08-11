@@ -1,52 +1,52 @@
-import time
-import numpy as np
-import os
-import cv2
-import pickle
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Dropout, Activation, Flatten, Conv2D, MaxPooling2D
-import tensorflow as tf
-from tensorflow.keras.callbacks import TensorBoard
-
-DATADIR = "/home/andriy/Downloads/kagglecatsanddogs_5340/PetImages"
-CATEGORIES = ["Dog", "Cat"]
-IMG_SIZE = 50  # resizing the shape
-
-training_data = []
-
-
-def create_training_data():
-    for category in CATEGORIES:
-        path = os.path.join(DATADIR, category)  # path to cats of dogs dir
-        class_num = CATEGORIES.index(category)
-        for img in os.listdir(path):
-            try:
-                img_array = cv2.imread(os.path.join(path, img), cv2.IMREAD_GRAYSCALE)
-                new_array = cv2.resize(img_array, (IMG_SIZE, IMG_SIZE))
-                training_data.append([new_array, class_num])
-            except Exception as e:
-                print(f' Something went wrong: {e.args}.')
-
-create_training_data()
-
-X = []
-Y = []
-
-for features, label in training_data:
-    X.append(features)
-    Y.append(label)
-
-X = np.array(X).reshape(-1, IMG_SIZE, IMG_SIZE, 1)
-
-
-pickle_out = open("X.pickle", "wb")
-pickle_out_2 = open("Y.pickle", "wb")
-
-pickle.dump(X, pickle_out)
-pickle.dump(Y, pickle_out_2)
-
-pickle_out.close()
-pickle_out_2.close()
+# import time
+# import numpy as np
+# import os
+# import cv2
+# import pickle
+# from tensorflow.keras.models import Sequential
+# from tensorflow.keras.layers import Dense, Dropout, Activation, Flatten, Conv2D, MaxPooling2D
+# import tensorflow as tf
+# from tensorflow.keras.callbacks import TensorBoard
+#
+# DATADIR = "/home/andriy/Downloads/kagglecatsanddogs_5340/PetImages"
+# CATEGORIES = ["Dog", "Cat"]
+# IMG_SIZE = 50  # resizing the shape
+#
+# training_data = []
+#
+#
+# def create_training_data():
+#     for category in CATEGORIES:
+#         path = os.path.join(DATADIR, category)  # path to cats of dogs dir
+#         class_num = CATEGORIES.index(category)
+#         for img in os.listdir(path):
+#             try:
+#                 img_array = cv2.imread(os.path.join(path, img), cv2.IMREAD_GRAYSCALE)
+#                 new_array = cv2.resize(img_array, (IMG_SIZE, IMG_SIZE))
+#                 training_data.append([new_array, class_num])
+#             except Exception as e:
+#                 print(f' Something went wrong: {e.args}.')
+#
+# create_training_data()
+#
+# X = []
+# Y = []
+#
+# for features, label in training_data:
+#     X.append(features)
+#     Y.append(label)
+#
+# X = np.array(X).reshape(-1, IMG_SIZE, IMG_SIZE, 1)
+#
+#
+# pickle_out = open("X.pickle", "wb")
+# pickle_out_2 = open("Y.pickle", "wb")
+#
+# pickle.dump(X, pickle_out)
+# pickle.dump(Y, pickle_out_2)
+#
+# pickle_out.close()
+# pickle_out_2.close()
 
 
 ########################################################################################3

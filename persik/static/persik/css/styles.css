@@ -95,5 +95,98 @@ font-family: 'Send Flowers', cursive;}
 
 .center {
   text-align: center;
+
+}
+
+#menu {
+    direction: absolute;
+}
+
+
+#menu li {
+    display: inline-block;
+    float: center;
+    margin: 10px;
+    color: #000;
+}
+
+/* Circle */
+.hover15 figure {
+	position: relative;
+}
+.hover15 figure::before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	display: block;
+	content: '';
+	width: 0;
+	height: 0;
+	background: rgba(255,255,255,.2);
+	border-radius: 100%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	opacity: 0;
+}
+
+.hover15 figure:hover::before {
+	-webkit-animation: circle .75s;
+	animation: circle .75s;
+}
+@-webkit-keyframes circle {
+	0% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 1;
+	}
+	100% {
+		width: 200%;
+		height: 200%;
+		opacity: 0;
+	}
+}
+@keyframes circle {
+	0% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 1;
+	}
+	100% {
+		width: 200%;
+		height: 200%;
+		opacity: 0;
+	}
+}
+
+#menu li a,
+#menu li.active a {
+    padding: 9px 18px;
+    display: block;
+}
+
+
+
+#menu_section {
+    text-align: center;
+    position: absolute;
+    top: 50;
+    height: 58px;
+    z-index: 70;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.video_border
+{
+    border: 3px solid gold;
+    padding: 30px;
+    width: 500px;
+    height: 340px;
+    margin: auto;
+
 }
 

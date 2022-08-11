@@ -1,5 +1,5 @@
 let container = document.querySelector("#container");
-let dino = document.querySelector("#dino");
+let cat = document.querySelector("#cat");
 let block = document.querySelector("#block");
 let road = document.querySelector("#road");
 let cloud = document.querySelector("#cloud");
@@ -39,25 +39,25 @@ window.addEventListener("keydown", (e) => {
     //    console.log(e);
 
     if (e.key == "ArrowUp")
-        if (dino.classList != "dinoActive") {
-            dino.classList.add("dinoActive");
+        if (cat.classList != "catActive") {
+            cat.classList.add("catActive");
 
             //                remove class after 0.5 seconds
             setTimeout(() => {
-                dino.classList.remove("dinoActive");
+                cat.classList.remove("catActive");
             }, 500);
         }
 });
 
 //'Game Over' if 'Character' hit The 'Block'
 let result = setInterval(() => {
-    let dinoBottom = parseInt(getComputedStyle(dino).getPropertyValue("bottom"));
+    let catBottom = parseInt(getComputedStyle(cat).getPropertyValue("bottom"));
     //    console.log("dinoBottom" + dinoBottom);
 
     let blockLeft = parseInt(getComputedStyle(block).getPropertyValue("left"));
     //    console.log("BlockLeft" + blockLeft);
 
-    if (dinoBottom <= 90 && blockLeft >= 20 && blockLeft <= 145) {
+    if (catBottom <= 90 && blockLeft >= 20 && blockLeft <= 100) {
         //        console.log("Game Over");
 
         gameOver.style.display = "block";

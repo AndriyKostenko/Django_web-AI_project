@@ -27,9 +27,8 @@ def find_the_location(ip_address):
         path_page = f'persik/templates/{name_page}'
         area.save(path_page)
 
-    except requests.exceptions.ConnectionError:
-        print('Check your connection')
-
+    except (requests.exceptions.ConnectionError, ValueError):
+        return None
     return name_page
 
 

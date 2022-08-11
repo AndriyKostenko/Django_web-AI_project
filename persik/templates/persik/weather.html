@@ -25,9 +25,9 @@
             {{ error }}
         {% endif %}
         {% if result %}
-        <ul>
+        <ul style="list-style: none;">
             {% for key, value in result.items %}
-            <li>{{key}}:{{value}}</li>
+                <li>{{key}} {{value}}</li>
             {% endfor %}
         </ul>
         {% endif %}

@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="center">
-        <p><h2> The accuracy is about 75 % of the Cat detection 😊. </h2>
+        <h2> The accuracy is about 75 % of the Cat detection 😊</h2>
         <form method="POST" action="" enctype='multipart/form-data'>
             {% csrf_token %}
             {{ form }}
@@ -26,8 +26,8 @@
                 {% endif %}
             </p>
             {% for res in result %}
-            {% if res %}
-                {{ res }}
+                {% if res %}
+                    {{ res }}
             {% endif %}
             {% endfor %}
         </p>

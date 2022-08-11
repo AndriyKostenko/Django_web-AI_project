@@ -94,10 +94,11 @@ def location(request):
             result = find_the_location(ip_address)
             if result:
                 return render(request, result)
-
+            else:
+                error = 'Incorrect IP address.'
 
     context = {
-        'title': 'Location',
+        'title': 'LocatioN',
         'error': error
     }
 

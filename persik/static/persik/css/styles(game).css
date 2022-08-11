@@ -18,7 +18,7 @@ body {
     overflow: hidden;
 }
 
-#container #dino {
+#container #cat {
     height: 70px;
     width: 70px;
     position: absolute;
@@ -26,16 +26,16 @@ body {
     left: 20px;
 }
 
-#container #dino img {
+#container #cat img {
     height: 70px;
     width: 70px;
 }
 
-.dinoActive {
-    animation: animateDino 0.5s linear infinite;
+.catActive {
+    animation: animateCat 0.5s linear infinite;
 }
 
-@keyframes animateDino {
+@keyframes animateCat {
 
     0%,
     100% {
