@@ -18,21 +18,22 @@ def find_the_weather(city_name):
         humidity = json_data['main']['humidity']
         wind = json_data['wind']['speed']
         sunrise = time.strftime("%H:%M:%S", time.gmtime(
-            json_data['sys']['sunrise'] + 7200))  # creating the local time from GMT+2
+            json_data['sys']['sunrise']))
         sunset = time.strftime("%H:%M:%S",
                                time.gmtime(
-                                   json_data['sys']['sunset'] + 7200))  # creating the local time from GMT+2
+                                   json_data['sys']['sunset']))
 
         result = {
+            'City:': city_name,
             'General Condition:': condition,
-            'Temperature:': str(temp) + "°C",
-            'Max temp.:': str(max_temp),
-            'Min temp.:': str(min_temp),
-            'Pressure:': str(pressure),
-            'Humidity:': str(humidity),
-            'Wind Speed:': str(wind),
-            'Sunrise:': str(sunrise),
-            'Sunset:': str(sunset)
+            'Temperature:': str(temp) + ' ' + "°C",
+            'Max temp.:': str(max_temp) + ' ' + "°C",
+            'Min temp.:': str(min_temp) + ' ' + "°C",
+            'Pressure:': str(pressure) + ' ' + 'mB',
+            'Humidity:': str(humidity) + ' ' +'%',
+            'Wind Speed:': str(wind) + ' ' + 'm/s',
+            'Sunrise:': str(sunrise) + ' ' + 'GMT',
+            'Sunset:': str(sunset) + ' ' + 'GMT'
         }
 
     except KeyError:

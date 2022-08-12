@@ -7,20 +7,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{{ title }}</title>
     <link type="text/css" href="{% static 'persik/css/styles.css' %}" rel="stylesheet" />
-
-
 </head>
 <body>
     <div class="center">
+        <div class="text_border">
         <form action="{% url 'weather' %}" method="post">
             {% csrf_token %}
-            <label for="city">Please enter your city: </label>
+            <h2><label for="city">Please enter your city and Persik will try to find the weather info: </label></h2>
             <input id="city" type="text" name="city" value="{{ current_city }}">
             <button type="submit">Submit</button>
         </form>
-
         {% if error %}
             {{ error }}
         {% endif %}
@@ -31,14 +29,10 @@
             {% endfor %}
         </ul>
         {% endif %}
-
         <p>{{ form.non_field_errors }}</p>
-
+        </div>
         <p><a href="{% url 'base' %}" style="--clr:#FFFAFA"><span> Back to Main Page </span><i></i></a></p>
-
     </div>
-
-
 
 </body>
 </html>

@@ -78,7 +78,6 @@ font-family: 'Send Flowers', cursive;}
 
 #footer {
 	box-sizing: border-box;
-
 	background: #3F4137;
 	padding: 5px;
 	color: #aaa;
@@ -95,7 +94,6 @@ font-family: 'Send Flowers', cursive;}
 
 .center {
   text-align: center;
-
 }
 
 #menu {
@@ -182,11 +180,40 @@ font-family: 'Send Flowers', cursive;}
 
 .video_border
 {
-    border: 3px solid gold;
+    border-color: orange;
+    border-width: 5px;
     padding: 30px;
     width: 500px;
     height: 340px;
     margin: auto;
+    border-style: inset;
 
 }
+
+.text_border
+{
+    border-color: orange;
+    border-width: 5px;
+    padding: 30px;
+    width: 500px;
+    height: 400px;
+    margin: auto;
+    border-style: inset;
+
+}
+
+.text_border_2
+{
+    border-color: orange;
+    border-width: 5px;
+    padding: 30px;
+    width: 700px;
+    height: 700px;
+    margin: auto;
+    border-style: inset;
+
+}
+
+
+
 

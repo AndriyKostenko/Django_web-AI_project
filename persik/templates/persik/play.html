@@ -6,7 +6,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dino Cat</title>
+
+    <title>{{ title }}</title>
+
     <link type="text/css" href="{% static 'persik/css/styles.css' %}" rel="stylesheet" />
     <link type="text/css" href="{% static 'persik/css/styles(game).css' %}" rel="stylesheet" />
         <!-- Connecting google fonts -->
@@ -30,9 +32,16 @@
         <div id="cloud">
             <img src="{% static 'persik/images/clouds4.png' %}" alt="cloud">
         </div>
-        <div id="score">Score <b>00</b></div>
-        <div id="gameOver">Game Over</div>
+        <div id="score">
+            Score
+            <b>00</b>
+        </div>
+        <div id="gameOver">
+            Game Over
+        </div>
     </div>
+
+    <p><h2>( to start the new game press 'space' button and ↑ )</h2>
 
     <p><a href="{% url 'base' %}" style="--clr:#FFFAFA"><span> Back to Main Page </span><i></i></a></p>
 

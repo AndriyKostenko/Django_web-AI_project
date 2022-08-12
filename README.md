@@ -1,22 +1,43 @@
- 
-python3 -m venv venv
+# Hello, this is my Django_web+AI_project.
 
-source venv/bin/activate
+Features:
 
-pip3 install -r requirements.txt 
+- Game
+- Video-hosting 
+- Recognizing of pictures (Tensorflow)
+- Obtaining the weather 
+- Searching the location
 
-python manage.py makemigrations (initialize the db)
-python manage.py migrate
+Stack:
 
-install mysql client
+- Python3
+- Django3
+- Tensorflow2
+- Keras
+- MySQL
+- Docker
+- Docker-Compose
+- HTML/CSS/JS
 
-create user: root
-password: password
+Also were hosted on AWS(EC2).
 
-$ mysql -u root -p (for creating the initial database)
 
-python manage.py createsuperuser (for access to admin panel)
+# To start the project via Docker u have to:
 
-python manage.py runserver
+1) git clone https://github.com/AndriyKostenko/Django_web-AI_project.git (copy the project)
 
-new
+2) python3 -m venv venv (installing virtual env.)
+
+3) pip3 install -r requirements.txt (installing all the requirements for the following project)
+
+4) docker-compose up --build (Build the Docker Image with Docker containers)
+
+5) docker exec -it persikwebsite_web_1 /bin/bash (to enter into container)
+    - python manage.py makemigrations (for database)
+    - python manage.py migrate (for database)
+    - python manage.py createsuperuser (for admin panel)
+
+(Use 'sudo' in case of working on Linux)
+
+
+

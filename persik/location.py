@@ -3,7 +3,6 @@ import folium
 
 
 def find_the_location(ip_address):
-    name_page = ''
     try:
         response = requests.get(url=f'http://ip-api.com/json/{ip_address}').json()
 

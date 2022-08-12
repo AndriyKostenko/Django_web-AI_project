@@ -1,6 +1,6 @@
-import os.path
-from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse, HttpResponseNotFound, StreamingHttpResponse, HttpResponseRedirect
+from django.shortcuts import render
+from django.http import HttpResponseNotFound
+from django.core.exceptions import ObjectDoesNotExist
 
 from .location import find_the_location
 from .models import Video, Photo
@@ -14,13 +14,14 @@ def base(request):
     context = {
         'title': 'Main page'
     }
-
     return render(request, 'persik/base.html', context=context)
 
 
 def play(request):
-
-    return render(request, 'persik/play.html')
+    context = {
+        'title': 'Play with Cat'
+    }
+    return render(request, 'persik/play.html', context=context)
 
 
 def watch(request):
@@ -29,7 +30,6 @@ def watch(request):
         'video_list': video_list,
         'title': 'Cat\'s Videos',
     }
-
     return render(request, 'persik/watch.html', context=context)
 
 
@@ -47,18 +47,17 @@ def recognize(request):
                 error = 'The file must be in .jpg, .jpeg, .png and/or less 4mb.'
         else:
             form = UploadFileForm()
-
-    last_photo = Photo.objects.latest('id')
-
+    try:
+        last_photo = Photo.objects.latest('id')
+    except ObjectDoesNotExist:
+        last_photo = None
     context = {
         'title': 'Recognize the Cat!',
         'form': form,
         'result': recognize_cat(),
         'photo': last_photo,
         'error': error
-
     }
-
     return render(request, 'persik/recognize.html', context=context)
 
 
@@ -76,7 +75,7 @@ def weather(request):
         form = CityForm()
 
     context = {
-        'title': 'Weather',
+        'title': 'Check the weather',
         'result': result,
         'form': form,
         'error': error
@@ -98,7 +97,7 @@ def location(request):
                 error = 'Incorrect IP address.'
 
     context = {
-        'title': 'LocatioN',
+        'title': 'Location',
         'error': error
     }
 

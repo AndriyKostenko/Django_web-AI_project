@@ -1,0 +1,9 @@
+logs/
+.git
+*.md
+.cache
+.venv
+.db
+.env
+.mydb
+.data
