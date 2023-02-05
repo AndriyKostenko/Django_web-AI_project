@@ -30,7 +30,7 @@ Also were hosted on AWS(EC2).
 
 3) pip3 install -r requirements.txt (installing all the requirements for the following project)
 
-4) docker-compose up --build (Build the Docker Image with Docker containers)
+4) docker compose up --build (Build the Docker Image with Docker containers)
 
 5) docker exec -it persikwebsite_web_1 /bin/bash (to enter into container)
     - python manage.py makemigrations (for database)
