@@ -32,7 +32,7 @@ Also were hosted on AWS(EC2).
 
 4) docker compose up --build (Build the Docker Image with Docker containers)
 
-5) docker exec -it persikwebsite_web_1 /bin/bash (to enter into container)
+5) docker exec -it django_web-ai_project-web-1 /bin/bash (to enter into container)
     - python manage.py makemigrations (for database)
     - python manage.py migrate (for database)
     - python manage.py createsuperuser (for admin panel)
