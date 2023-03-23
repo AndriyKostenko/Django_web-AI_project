@@ -24,18 +24,20 @@ Also were hosted on AWS(EC2).
 
 # To start the project via Docker u have to:
 
-1) git clone https://github.com/AndriyKostenko/Django_web-AI_project.git (copy the project)
+1) `git clone https://github.com/AndriyKostenko/Django_web-AI_project.git` (copy the project)
 
-2) python3 -m venv venv (installing virtual env.)
+2) `python3 -m venv venv` (installing virtual env.)
 
-3) pip3 install -r requirements.txt (installing all the requirements for the following project)
+3) `source venv/bin/activate` (activating of virtual env)
 
-4) docker compose up --build (Build the Docker Image with Docker containers)
+3) `pip3 install -r requirements.txt` (installing all the requirements for the following project)
 
-5) docker exec -it django_web-ai_project-web-1 /bin/bash (to enter into container)
-    - python manage.py makemigrations (for database)
-    - python manage.py migrate (for database)
-    - python manage.py createsuperuser (for admin panel)
+4) `docker compose up --build` (Build the Docker Image with Docker containers)
+
+5) `docker exec -it django_web-ai_project-web-1 /bin/bash` (to enter into container)
+    - `python manage.py makemigrations` (for database)
+    - `python manage.py migrate` (for database)
+    - `python manage.py createsuperuser` (for admin panel)
 
 (Use 'sudo' in case of working on Linux)
 
